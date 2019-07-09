@@ -10,7 +10,11 @@
 #' @export
 
 
-create_default_folder_structure = function(project_path = getwd(), project_author){
+create_default_folder_structure = function(project_path = getwd(), project_author = NULL){
+  if (is.null(project_author)){
+    stop("project_author is not defined")
+  }
+
   library(stringr)
   library(readr)
 
